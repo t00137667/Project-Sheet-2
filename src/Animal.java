@@ -5,10 +5,11 @@ public class Animal {
     private int age;
 
     public Animal(){
-        setType("No Type Specified");
+        /*setType("No Type Specified");
         setContinents(null);
         setWeight(0.0f);
-        setAge(0);
+        setAge(0);*/
+        this("No type Specified",null,0.0f,0);
     }
 
     public Animal(String type,String[] continents,float weight,int age){
@@ -18,20 +19,20 @@ public class Animal {
         setAge(age);
     }
 
-    @Override
-    public String toString() {
+    //@Override
+    public String toString(int count) {
         String array = "";
         if (continents==null){
             array = "null";
         }
         else {
-            for (int i = 0;i<continents.length;i++)
+            for (int i = 0;i<count;i++)
             {
-                array += continents[i];
+                array += continents[i] + " ";
             }
         }
 
-        String s = String.format("Type: %s\nContinents: %s\nWeight: %.1f\nAge: %d",type,array,weight,age);
+        String s = String.format("Type: %s\nContinents: %s\nWeight: %.1f\nAge: %d",getType(),array,getWeight(),getAge());
         return s;
     }
 
