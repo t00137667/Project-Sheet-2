@@ -29,6 +29,6 @@ public class MyPointDriver {
         double a = myPoint.getxVal();
         double b = myPoint.getyVal();
         double c = Math.sqrt((a*a)+(b*b));
-        JOptionPane.showMessageDialog(null,"Distance from the origin is: "+ c);
+        JOptionPane.showMessageDialog(null,"For point: X:" + myPoint.getxVal() + " y: " + myPoint.getyVal() + "\nDistance from the origin is: " +  String.format("%.3f",c) + " units");
     }
 }
