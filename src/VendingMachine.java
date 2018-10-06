@@ -14,15 +14,21 @@ public class VendingMachine {
 
 
 
-    public void tokenInserted(){
-        if(getCansCount()==0)
-            JOptionPane.showMessageDialog(null,"Error, The vending machine is empty.");
-        else
-        {
-            //Release Can
-            setCans(getCansCount()-1);
-            setTokens(getTokensCount()+1);
+    public void tokenInserted(int tokens){
+        int count=0;
+        for (int i = 0; i<tokens;i++){
+            if(getCansCount()==0)
+                JOptionPane.showMessageDialog(null,"Error, The vending machine is empty.");
+            else
+            {
+                //Release Can
+                setCans(getCansCount()-1);
+                setTokens(getTokensCount()+1);
+                count++;
+            }
         }
+        System.out.println("Can(s) released: " + count);
+
     }
 
     public void fillUp(int cans){
@@ -31,7 +37,7 @@ public class VendingMachine {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Cans: "+getCansCount()+ " Tokens: " +getTokensCount();
     }
 
     public int getTokensCount() {
